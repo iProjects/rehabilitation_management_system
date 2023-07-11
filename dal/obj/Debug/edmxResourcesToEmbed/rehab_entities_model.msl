@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="rehabilitation_management_dbModelStoreContainer" CdmEntityContainer="rehabilitation_management_dbEntities">
+    <EntitySetMapping Name="tbl_clients">
+      <EntityTypeMapping TypeName="rehabilitation_management_dbModel.tbl_clients">
+        <MappingFragment StoreEntitySet="tbl_clients">
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="client_dob" ColumnName="client_dob" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_institutions">
+      <EntityTypeMapping TypeName="rehabilitation_management_dbModel.tbl_institutions">
+        <MappingFragment StoreEntitySet="tbl_institutions">
+          <ScalarProperty Name="institution_id" ColumnName="institution_id" />
+          <ScalarProperty Name="institution_name" ColumnName="institution_name" />
+          <ScalarProperty Name="institution_location" ColumnName="institution_location" />
+          <ScalarProperty Name="institution_start_date" ColumnName="institution_start_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_AllowedReportsRolesMenus">
+      <EntityTypeMapping TypeName="rehabilitation_management_dbModel.tbl_AllowedReportsRolesMenus">
+        <MappingFragment StoreEntitySet="tbl_AllowedReportsRolesMenus">
+          <ScalarProperty Name="Allowed" ColumnName="Allowed" />
+          <ScalarProperty Name="MenuItemId" ColumnName="MenuItemId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="allowed_report_role_menu_Id" ColumnName="allowed_report_role_menu_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_AllowedRoleMenus">
+      <EntityTypeMapping TypeName="rehabilitation_management_dbModel.tbl_AllowedRoleMenus">
+        <MappingFragment StoreEntitySet="tbl_AllowedRoleMenus">
+          <ScalarProperty Name="Allowed" ColumnName="Allowed" />
+          <ScalarProperty Name="MenuItemId" ColumnName="MenuItemId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="allowed_role_menu_Id" ColumnName="allowed_role_menu_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_MenuItems">
+      <EntityTypeMapping TypeName="rehabilitation_management_dbModel.tbl_MenuItems">
+        <MappingFragment StoreEntitySet="tbl_MenuItems">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="mnuName" ColumnName="mnuName" />
+          <ScalarProperty Name="menu_item_Id" ColumnName="menu_item_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Menus">
+      <EntityTypeMapping TypeName="rehabilitation_management_dbModel.tbl_Menus">
+        <MappingFragment StoreEntitySet="tbl_Menus">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="mnuName" ColumnName="mnuName" />
+          <ScalarProperty Name="menu_Id" ColumnName="menu_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ReportsMenuItems">
+      <EntityTypeMapping TypeName="rehabilitation_management_dbModel.tbl_ReportsMenuItems">
+        <MappingFragment StoreEntitySet="tbl_ReportsMenuItems">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="mnuName" ColumnName="mnuName" />
+          <ScalarProperty Name="report_menu_Id" ColumnName="report_menu_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_roles">
+      <EntityTypeMapping TypeName="rehabilitation_management_dbModel.tbl_roles">
+        <MappingFragment StoreEntitySet="tbl_roles">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ShortCode" ColumnName="ShortCode" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_users">
+      <EntityTypeMapping TypeName="rehabilitation_management_dbModel.tbl_users">
+        <MappingFragment StoreEntitySet="tbl_users">
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="InformBy" ColumnName="InformBy" />
+          <ScalarProperty Name="DateJoined" ColumnName="DateJoined" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

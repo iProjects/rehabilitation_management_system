@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rehabilitation_management_dbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="rehabilitation_management_dbModelStoreContainer">
+    <EntitySet Name="tbl_AllowedReportsRolesMenus" EntityType="rehabilitation_management_dbModel.Store.tbl_AllowedReportsRolesMenus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_AllowedRoleMenus" EntityType="rehabilitation_management_dbModel.Store.tbl_AllowedRoleMenus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_clients" EntityType="rehabilitation_management_dbModel.Store.tbl_clients" store:Type="Tables" store:Schema="dbo" store:Name="tbl_clients">
+      <DefiningQuery>SELECT 
+      [tbl_clients].[client_id] AS [client_id], 
+      [tbl_clients].[client_name] AS [client_name], 
+      [tbl_clients].[client_dob] AS [client_dob]
+      FROM [dbo].[tbl_clients] AS [tbl_clients]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_institutions" EntityType="rehabilitation_management_dbModel.Store.tbl_institutions" store:Type="Tables" store:Schema="dbo" store:Name="tbl_institutions">
+      <DefiningQuery>SELECT 
+      [tbl_institutions].[institution_id] AS [institution_id], 
+      [tbl_institutions].[institution_name] AS [institution_name], 
+      [tbl_institutions].[institution_location] AS [institution_location], 
+      [tbl_institutions].[institution_start_date] AS [institution_start_date]
+      FROM [dbo].[tbl_institutions] AS [tbl_institutions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_MenuItems" EntityType="rehabilitation_management_dbModel.Store.tbl_MenuItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Menus" EntityType="rehabilitation_management_dbModel.Store.tbl_Menus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_ReportsMenuItems" EntityType="rehabilitation_management_dbModel.Store.tbl_ReportsMenuItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_roles" EntityType="rehabilitation_management_dbModel.Store.tbl_roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_users" EntityType="rehabilitation_management_dbModel.Store.tbl_users" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="tbl_AllowedReportsRolesMenus">
+    <Key>
+      <PropertyRef Name="allowed_report_role_menu_Id" />
+    </Key>
+    <Property Name="allowed_report_role_menu_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="MenuItemId" Type="int" Nullable="false" />
+    <Property Name="Allowed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_AllowedRoleMenus">
+    <Key>
+      <PropertyRef Name="allowed_role_menu_Id" />
+    </Key>
+    <Property Name="allowed_role_menu_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="MenuItemId" Type="int" Nullable="false" />
+    <Property Name="Allowed" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'rehabilitation_management_db.dbo.tbl_clients' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="tbl_clients">
+    <Key>
+      <PropertyRef Name="client_id" />
+    </Key>
+    <Property Name="client_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="client_name" Type="text" />
+    <Property Name="client_dob" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'rehabilitation_management_db.dbo.tbl_institutions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="tbl_institutions">
+    <Key>
+      <PropertyRef Name="institution_id" />
+    </Key>
+    <Property Name="institution_id" Type="int" Nullable="false" />
+    <Property Name="institution_name" Type="text" />
+    <Property Name="institution_location" Type="text" />
+    <Property Name="institution_start_date" Type="text" />
+  </EntityType>
+  <EntityType Name="tbl_MenuItems">
+    <Key>
+      <PropertyRef Name="menu_item_Id" />
+    </Key>
+    <Property Name="menu_item_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mnuName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_Menus">
+    <Key>
+      <PropertyRef Name="menu_Id" />
+    </Key>
+    <Property Name="menu_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mnuName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_ReportsMenuItems">
+    <Key>
+      <PropertyRef Name="report_menu_Id" />
+    </Key>
+    <Property Name="report_menu_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mnuName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_roles">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ShortCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Locked" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="SystemId" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="200" />
+    <Property Name="OtherNames" Type="nvarchar" MaxLength="200" />
+    <Property Name="NationalID" Type="nvarchar" MaxLength="200" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="DateJoined" Type="date" />
+    <Property Name="InformBy" Type="nvarchar" MaxLength="200" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+  </EntityType>
+</Schema>

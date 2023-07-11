@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rehabilitation_management_dbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="rehabilitation_management_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_clients" EntityType="rehabilitation_management_dbModel.tbl_clients" />
+    <EntitySet Name="tbl_institutions" EntityType="rehabilitation_management_dbModel.tbl_institutions" />
+    <EntitySet Name="tbl_AllowedReportsRolesMenus" EntityType="rehabilitation_management_dbModel.tbl_AllowedReportsRolesMenus" />
+    <EntitySet Name="tbl_AllowedRoleMenus" EntityType="rehabilitation_management_dbModel.tbl_AllowedRoleMenus" />
+    <EntitySet Name="tbl_MenuItems" EntityType="rehabilitation_management_dbModel.tbl_MenuItems" />
+    <EntitySet Name="tbl_Menus" EntityType="rehabilitation_management_dbModel.tbl_Menus" />
+    <EntitySet Name="tbl_ReportsMenuItems" EntityType="rehabilitation_management_dbModel.tbl_ReportsMenuItems" />
+    <EntitySet Name="tbl_roles" EntityType="rehabilitation_management_dbModel.tbl_roles" />
+    <EntitySet Name="tbl_users" EntityType="rehabilitation_management_dbModel.tbl_users" />
+  </EntityContainer>
+  <EntityType Name="tbl_clients">
+    <Key>
+      <PropertyRef Name="client_id" />
+    </Key>
+    <Property Name="client_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="client_name" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="client_dob" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_institutions">
+    <Key>
+      <PropertyRef Name="institution_id" />
+    </Key>
+    <Property Name="institution_id" Type="Int32" Nullable="false" />
+    <Property Name="institution_name" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="institution_location" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="institution_start_date" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_AllowedReportsRolesMenus">
+    <Key>
+      <PropertyRef Name="allowed_report_role_menu_Id" />
+    </Key>
+    <Property Type="Int32" Name="allowed_report_role_menu_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="Int32" Name="MenuItemId" Nullable="false" />
+    <Property Type="Boolean" Name="Allowed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_AllowedRoleMenus">
+    <Key>
+      <PropertyRef Name="allowed_role_menu_Id" />
+    </Key>
+    <Property Type="Int32" Name="allowed_role_menu_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="Int32" Name="MenuItemId" Nullable="false" />
+    <Property Type="Boolean" Name="Allowed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_MenuItems">
+    <Key>
+      <PropertyRef Name="menu_item_Id" />
+    </Key>
+    <Property Type="Int32" Name="menu_item_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="mnuName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Menus">
+    <Key>
+      <PropertyRef Name="menu_Id" />
+    </Key>
+    <Property Type="Int32" Name="menu_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="mnuName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_ReportsMenuItems">
+    <Key>
+      <PropertyRef Name="report_menu_Id" />
+    </Key>
+    <Property Type="Int32" Name="report_menu_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="mnuName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_roles">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Type="Int32" Name="role_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ShortCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Type="Int32" Name="user_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Locked" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="String" Name="SystemId" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Surname" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="OtherNames" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NationalID" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DateOfBirth" />
+    <Property Type="String" Name="Gender" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Telephone" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DateJoined" />
+    <Property Type="String" Name="InformBy" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Photo" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

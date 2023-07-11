@@ -1,0 +1,6 @@
+D:\wakxpx\csharp\visualstudio\2010\rehabilitation_management_system\dal\bin\Debug\dal.dll.config
+D:\wakxpx\csharp\visualstudio\2010\rehabilitation_management_system\dal\bin\Debug\dal.dll
+D:\wakxpx\csharp\visualstudio\2010\rehabilitation_management_system\dal\bin\Debug\dal.pdb
+D:\wakxpx\csharp\visualstudio\2010\rehabilitation_management_system\dal\obj\Debug\dal.dll
+D:\wakxpx\csharp\visualstudio\2010\rehabilitation_management_system\dal\obj\Debug\dal.pdb
+D:\wakxpx\csharp\visualstudio\2010\rehabilitation_management_system\dal\obj\Debug\dal.csprojResolveAssemblyReference.cache
